@@ -6,7 +6,10 @@
 GET     /                           controllers.HomeController.index()
 GET     /chat                       controllers.HomeController.chat()
 
+# For serving image files
+GET  /images/*image  controllers.Assets.at(path="/public/images", image: Asset)
+
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file               controllers.Assets.at(path="/public", file: Asset)
 
 ->          /webjars                webjars.Routes

@@ -1,0 +1,9 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/conf/routes:10:1: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : controllers.Assets.Asset[0m
+[0m[[0m[31merror[0m] [0m[0m required: String[0m
+[0m[[0m[31merror[0m] [0m[0mGET  /images/*image  controllers.Assets.at(path="/public/images", image: Asset)[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/conf/routes:13:1: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : controllers.Assets.Asset[0m
+[0m[[0m[31merror[0m] [0m[0m required: String[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /assets/*file               controllers.Assets.at(path="/public", file: Asset)[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

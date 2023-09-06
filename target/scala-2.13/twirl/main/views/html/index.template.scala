@@ -35,7 +35,7 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 
         """),format.raw/*12.9*/("""<link rel="stylesheet" media="screen" href=""""),_display_(/*12.54*/routes/*12.60*/.Assets.at("stylesheets/main.css")),format.raw/*12.94*/("""">
         <link rel="shortcut icon" type="image/png" href=""""),_display_(/*13.59*/routes/*13.65*/.Assets.at("images/favicon.png")),format.raw/*13.97*/("""">
-        <title>Chat Room</title>
+        <title>Hangout zone for reminders and notes</title>
 
     </head>
 
@@ -43,7 +43,7 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
         <div class="wrap">
             <div class="container-fluid">
                 <div>
-                    <h1 class="">Chat Room</h1>
+                    <h1 class="">Hangout zone for reminders and notes</h1>
                 </div>
 
                 <div class="row">
@@ -94,8 +94,8 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
               /*
                   -- GENERATED --
                   SOURCE: app/views/index.scala.html
-                  HASH: 3405918bd742d856734da2556e4d59762a45cbe9
-                  MATRIX: 758->1|926->76|1176->300|1195->311|1249->345|1286->355|1306->366|1367->406|1404->416|1476->461|1491->467|1546->501|1634->562|1649->568|1702->600|2825->1696|2845->1707|2899->1740|2936->1750|2956->1761|3015->1799|3051->1808|3115->1845|3130->1851|3195->1895|3279->1952|3294->1958|3347->1990|3387->2003|3421->2015
+                  HASH: 3c0ab5678e6f7606ee7beb3c8e3f369e200e94ca
+                  MATRIX: 758->1|926->76|1176->300|1195->311|1249->345|1286->355|1306->366|1367->406|1404->416|1476->461|1491->467|1546->501|1634->562|1649->568|1702->600|2879->1750|2899->1761|2953->1794|2990->1804|3010->1815|3069->1853|3105->1862|3169->1899|3184->1905|3249->1949|3333->2006|3348->2012|3401->2044|3441->2057|3475->2069
                   LINES: 21->1|26->2|33->9|33->9|33->9|34->10|34->10|34->10|36->12|36->12|36->12|36->12|37->13|37->13|37->13|73->49|73->49|73->49|74->50|74->50|74->50|75->51|75->51|75->51|75->51|76->52|76->52|76->52|76->52|76->52
                   -- GENERATED --
               */

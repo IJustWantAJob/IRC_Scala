@@ -16,7 +16,7 @@ class Routes(
   HomeController_0: controllers.HomeController,
   // @LINE:10
   Assets_1: controllers.Assets,
-  // @LINE:12
+  // @LINE:15
   webjars_Routes_0: webjars.Routes,
   val prefix: String
 ) extends GeneratedRouter {
@@ -27,7 +27,7 @@ class Routes(
     HomeController_0: controllers.HomeController,
     // @LINE:10
     Assets_1: controllers.Assets,
-    // @LINE:12
+    // @LINE:15
     webjars_Routes_0: webjars.Routes
   ) = this(errorHandler, HomeController_0, Assets_1, webjars_Routes_0, "/")
 
@@ -44,8 +44,9 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """chat""", """controllers.HomeController.chat()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
-    prefixed_webjars_Routes_0_3.router.documentation,
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """images/""" + "$" + """image<.+>""", """controllers.Assets.at(path:String = "/public/images", image:Asset)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:Asset)"""),
+    prefixed_webjars_Routes_0_4.router.documentation,
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -91,15 +92,33 @@ class Routes(
 
   // @LINE:10
   private[this] lazy val controllers_Assets_at2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("images/"), DynamicPart("image", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_at2_invoker = createInvoker(
-    Assets_1.at(fakeValue[String], fakeValue[String]),
+    Assets_1.at(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
       "at",
-      Seq(classOf[String], classOf[String]),
+      Seq(classOf[String], classOf[Asset]),
+      "GET",
+      this.prefix + """images/""" + "$" + """image<.+>""",
+      """ For serving image files""",
+      Seq()
+    )
+  )
+
+  // @LINE:13
+  private[this] lazy val controllers_Assets_at3_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
+  )
+  private[this] lazy val controllers_Assets_at3_invoker = createInvoker(
+    Assets_1.at(fakeValue[String], fakeValue[Asset]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Assets",
+      "at",
+      Seq(classOf[String], classOf[Asset]),
       "GET",
       this.prefix + """assets/""" + "$" + """file<.+>""",
       """ Map static resources from the /public folder to the /assets URL path""",
@@ -107,8 +126,8 @@ class Routes(
     )
   )
 
-  // @LINE:12
-  private[this] val prefixed_webjars_Routes_0_3 = Include(webjars_Routes_0.withPrefix(this.prefix + (if (this.prefix.endsWith("/")) "" else "/") + "webjars"))
+  // @LINE:15
+  private[this] val prefixed_webjars_Routes_0_4 = Include(webjars_Routes_0.withPrefix(this.prefix + (if (this.prefix.endsWith("/")) "" else "/") + "webjars"))
 
 
   def routes: PartialFunction[RequestHeader, Handler] = {
@@ -127,11 +146,17 @@ class Routes(
   
     // @LINE:10
     case controllers_Assets_at2_route(params@_) =>
-      call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at2_invoker.call(Assets_1.at(path, file))
+      call(Param[String]("path", Right("/public/images")), params.fromPath[Asset]("image", None)) { (path, image) =>
+        controllers_Assets_at2_invoker.call(Assets_1.at(path, image))
       }
   
-    // @LINE:12
-    case prefixed_webjars_Routes_0_3(handler) => handler
+    // @LINE:13
+    case controllers_Assets_at3_route(params@_) =>
+      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
+        controllers_Assets_at3_invoker.call(Assets_1.at(path, file))
+      }
+  
+    // @LINE:15
+    case prefixed_webjars_Routes_0_4(handler) => handler
   }
 }

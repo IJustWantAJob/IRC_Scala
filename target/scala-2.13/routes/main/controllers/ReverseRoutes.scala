@@ -38,9 +38,22 @@ package controllers {
 
   
     // @LINE:10
-    def at(file:String): Call = {
-      implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
-      Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))
+    def at(path:String, image:Asset): Call = {
+    
+      (path: @unchecked, image: @unchecked) match {
+      
+        // @LINE:10
+        case (path, image) if path == "/public/images" =>
+          implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public/images"))); _rrc
+          Call("GET", _prefix + { _defaultPrefix } + "images/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("image", image))
+      
+        // @LINE:13
+        case (path, image) if path == "/public" =>
+          implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
+          Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", image))
+      
+      }
+    
     }
   
   }
