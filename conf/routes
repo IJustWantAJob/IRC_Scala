@@ -1,3 +1,4 @@
+
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
@@ -6,10 +7,11 @@
 GET     /                           controllers.HomeController.index()
 GET     /chat                       controllers.HomeController.chat()
 
-# For serving image files
-GET  /images/*image  controllers.Assets.at(path="/public/images", image: Asset)
+//COMMENT THIS DOWN BELOW OUT OR FIGURE SOMETHING OUT WITH DRAWING FROM public/images/*file
+    GET  /images/*file  controllers.Assets.at(path="/public/images", file: Asset)
+
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file: Asset)
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 ->          /webjars                webjars.Routes

@@ -1,9 +1,23 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/conf/routes:10:1: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : controllers.Assets.Asset[0m
-[0m[[0m[31merror[0m] [0m[0m required: String[0m
-[0m[[0m[31merror[0m] [0m[0mGET  /images/*image  controllers.Assets.at(path="/public/images", image: Asset)[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/conf/routes:13:1: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : controllers.Assets.Asset[0m
-[0m[[0m[31merror[0m] [0m[0m required: String[0m
-[0m[[0m[31merror[0m] [0m[0mGET     /assets/*file               controllers.Assets.at(path="/public", file: Asset)[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/app/controllers/HomeController.scala:51:31: value HomeController is not a member of object controllers.routes[0m
+[0m[[0m[31merror[0m] [0m[0m    val webSocketUrl = routes.HomeController.chat().webSocketURL()[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/app/filters/ContentSecurityPolicyFilter.scala:17:31: value HomeController is not a member of object controllers.routes[0m
+[0m[[0m[31merror[0m] [0m[0m    val webSocketUrl = routes.HomeController.chat().webSocketURL()(request)[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/app/views/index.scala.html:12:70: not enough arguments for method at: (path: String, image: String): play.api.mvc.Call.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter image.[0m
+[0m[[0m[31merror[0m] [0m[0m        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/app/views/index.scala.html:13:75: not enough arguments for method at: (path: String, image: String): play.api.mvc.Call.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter image.[0m
+[0m[[0m[31merror[0m] [0m[0m        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/app/views/index.scala.html:51:62: not enough arguments for method at: (path: String, image: String): play.api.mvc.Call.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter image.[0m
+[0m[[0m[31merror[0m] [0m[0m        <script type='text/javascript' src='@routes.Assets.at("javascripts/modernizr-3.5.0.js")'></script>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adi/Downloads/play-samples-play-scala-chatroom-example/app/views/index.scala.html:52:62: not enough arguments for method at: (path: String, image: String): play.api.mvc.Call.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter image.[0m
+[0m[[0m[31merror[0m] [0m[0m        <script type='text/javascript' src='@routes.Assets.at("javascripts/app.js")' data-url='@webSocketUrl'></script>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
